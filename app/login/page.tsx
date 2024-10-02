@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link' // Add this import
 import { auth } from '@/app/firebase/config'
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from 'firebase/auth'
 import { Button } from "@/components/ui/button"
@@ -94,6 +95,15 @@ export default function LoginPage() {
           </svg>
           Sign in with Google
         </Button>
+        
+        <div className="text-center">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{' '}
+            <Link href="/signup" className="font-medium text-primary hover:underline">
+              Sign up
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   )
